@@ -1,0 +1,18 @@
+body {
+  background-image: url('06-pokemon.jpeg');
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+  color: red;
+}
+
+h5 {
+  color: white;
+}
+
+#mainTable { 
+  background-color: rgba(0, 0, 0, 0.5);
+}

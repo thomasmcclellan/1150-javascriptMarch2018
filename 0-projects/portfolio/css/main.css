@@ -1,0 +1,179 @@
+/* Variables used throughout will go here. */
+/* EFA Color pallete */
+/****************************
+Body Section
+****************************/
+body {
+  padding: 15px;
+  background: url("http://eleven50.wpengine.com/wp-content/uploads/2017/03/Learning-to-Code5.png?id=21797") no-repeat center center; }
+
+header {
+  text-align: center; }
+
+.section-title h2 {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 30px;
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+  position: relative;
+  text-transform: uppercase; }
+
+/* ------------------------------
+Navbar Section
+--------------------------------*/
+#main-nav {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: none;
+  background: transparent; }
+  #main-nav:hover {
+    background: transparent; }
+  #main-nav .icon-bar {
+    width: 22px;
+    left: 3px;
+    transition: all 2.2s;
+    position: relative; }
+    #main-nav .icon-bar:nth-child(2) {
+      transform: rotate(45deg);
+      transform-origin: 10% 10%; }
+    #main-nav .icon-bar:nth-child(3) {
+      opacity: 0; }
+    #main-nav .icon-bar:nth-child(4) {
+      transform: rotate(-45deg);
+      transform-origin: 10% 90%; }
+  #main-nav.collapsed .icon-bar {
+    left: 0; }
+    #main-nav.collapsed .icon-bar:nth-child(2) {
+      transform: rotate(50); }
+    #main-nav.collapsed .icon-bar:nth-child(3) {
+      opacity: 1; }
+    #main-nav.collapsed .icon-bar:nth-child(4) {
+      transform: rotate(0); }
+
+/* CSS code for the Header section. */
+.jumbotron {
+  background: url("http://eleven50.wpengine.com/wp-content/uploads/2017/03/Learning-to-Code5.png?id=21797") no-repeat center center;
+  padding-top: 8rem;
+  padding-bottom: 8rem; }
+
+.jumbotron-heading {
+  padding-top: 50px;
+  font-weight: 400; }
+
+.jumbotron .container {
+  max-width: 60rem; }
+
+/* ------------------------------
+Portfolio Section
+--------------------------------*/
+#portfolio {
+  background: #fff;
+  padding: 80px 0; }
+
+#portfolio .portfolio-item {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 260px;
+  width: 100%;
+  display: table;
+  overflow: hidden;
+  margin-bottom: 30px; }
+
+#portfolio .portfolio-item .details {
+  height: 260px;
+  background: #fff;
+  display: table-cell;
+  vertical-align: middle;
+  opacity: 0;
+  transition: 0.3s;
+  text-align: center; }
+
+#portfolio .portfolio-item .details h4 {
+  font-size: 25px;
+  transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+  transform: translate3d(0, -15px, 0);
+  font-weight: 700;
+  color: #000; }
+
+#portfolio .portfolio-item .details span {
+  display: block;
+  color: #53565A;
+  font-size: 18px;
+  transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+  -webkit-transform: translate3d(0, 15px, 0);
+  transform: translate3d(0, 15px, 0); }
+
+#portfolio .portfolio-item:hover .details {
+  opacity: 0.6; }
+
+#portfolio .portfolio-item:hover .details h4 {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+#portfolio .portfolio-item:hover .details span {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.image-link {
+  cursor: -webkit-zoom-in;
+  cursor: -moz-zoom-in;
+  cursor: zoom-in; }
+
+/* aligns caption to center */
+.mfp-title {
+  text-align: center;
+  padding: 5px 5px; }
+
+/****************************
+About Section
+****************************/
+#about {
+  background: url("../assets/logo/blue-green-bg.jpg") no-repeat center center;
+  font-size: 18px; }
+
+.about-panel {
+  visibility: visible;
+  -webkit-animation-delay: 0.1s;
+  -moz-animation-delay: 0.1s;
+  animation-delay: 0.1s; }
+
+/* CSS code for the Contact section. */
+#contact {
+  margin: 50px; }
+
+#contact .social-links ul {
+  list-style: none; }
+
+#contact .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #53565A;
+  color: #fff;
+  line-height: 1;
+  padding: 12px 0;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s; }
+
+#contact .social-links a:hover {
+  background: #8acfba;
+  color: #fff; }
+
+/* CSS code for the Footer section. */
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #D9514E;
+  font-size: 18px;
+  color: #8acfba; }
+
+footer p {
+  margin-bottom: .25rem; }
