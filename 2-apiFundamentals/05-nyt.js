@@ -12,10 +12,11 @@ const previousBtn = document.querySelector('.prev');
 const nav = document.querySelector('nav');
 const section = document.querySelector('section');
 
+// Group 1
 nav.style.display = 'none';
 
 let pageNumber = 0;
-console.log('PageNumber:', pageNumber);
+// console.log('PageNumber:', pageNumber);
 let displayNav = false;
 
 searchForm.addEventListener('submit', fetchResults);
@@ -44,6 +45,7 @@ function fetchResults(e) {
     })
 }
 
+// Group 2
 function displayResults(json) {
   // console.log('Display Results', json);
   // console.log(json.response.docs);
@@ -75,6 +77,7 @@ function displayResults(json) {
 
       para.textContent = 'Keywords: ';
 
+      // Group 3
       for (let j = 0; j < current.keywords.length; j++) {
         let span = document.createElement('span');
         span.textContent += current.keywords[j].value + ' ';
