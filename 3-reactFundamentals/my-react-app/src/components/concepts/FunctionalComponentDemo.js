@@ -48,30 +48,30 @@ export default FunctionalComponentDemo;
 
 const HelloWorld = function () {
   return (
-      <div>
-          <Card>
-          <img width="100%" height="280px" src="https://i.ytimg.com/vi/BwAakF_VUV8/maxresdefault.jpg" alt="Card cap" />
-              <CardBody>
-                  <CardTitle>Regular Ole Function</CardTitle>
-                  <CardSubtitle>A JS Library</CardSubtitle>
-                  <CardText>const HelloWorld = function()</CardText>
-                  <Button>Button</Button>
-              </CardBody>
-          </Card>
-      </div>
+    <div>
+      <Card>
+      <img width="100%" height="280px" src="https://i.ytimg.com/vi/BwAakF_VUV8/maxresdefault.jpg" alt="Card cap" />
+        <CardBody>
+          <CardTitle>Regular Ole Function</CardTitle>
+          <CardSubtitle>A JS Library</CardSubtitle>
+          <CardText>const HelloWorld = function()</CardText>
+          <Button>Button</Button>
+        </CardBody>
+      </Card>
+    </div>
   )
 };
 
 //Fat Arrow Functional Component - 3 fewer lines. Common in React....
 const HelloWorldFatArrow = () =>
   <div>
-      <Card>
-          <img width="100%" height="280px" src="https://i.ytimg.com/vi/_pfXEv9cFGE/maxresdefault.jpg" alt="Card cap" />
-          <CardBody>
-              <CardTitle>Fat Arrow</CardTitle>
-              <CardSubtitle>A JS Library</CardSubtitle>
-              <CardText>const HelloWorld = () =></CardText>
-              <Button>Button</Button>
-          </CardBody>
-      </Card>
+    <Card>
+      <img width="100%" height="280px" src="https://i.ytimg.com/vi/_pfXEv9cFGE/maxresdefault.jpg" alt="Card cap" />
+      <CardBody>
+        <CardTitle>Fat Arrow</CardTitle>
+        <CardSubtitle>A JS Library</CardSubtitle>
+        <CardText>const HelloWorld = () =></CardText>
+        <Button>Button</Button>
+      </CardBody>
+    </Card>
   </div>

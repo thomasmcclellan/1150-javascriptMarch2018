@@ -2,6 +2,7 @@ import React from 'react';
 import Home from './Home';
 import Resources from './Resources';
 import FunctionalComponentDemo from '../concepts/FunctionalComponentDemo';
+import JSXRules from '../concepts/JSXRules';
 
 export const routes = [
   {
@@ -13,6 +14,11 @@ export const routes = [
     path: '/functionalcomponent',
     exact: true,
     main: () => <FunctionalComponentDemo/>
+  },
+  {
+    path: '/jsxrules',
+    exact: true,
+    main: () => <JSXRules/>
   },
   {
     path: '/resources',
