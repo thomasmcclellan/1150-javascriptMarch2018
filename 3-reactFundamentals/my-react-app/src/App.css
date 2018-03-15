@@ -7,9 +7,8 @@ Body Section
 ********************/
 body {
   padding: 15px;
-  background-color: #d9514e;
   color: white;
-  font-family: 'Belleza'; }
+  font: Belleza; }
 
 /********************
 Header Section
