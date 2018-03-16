@@ -1,5 +1,5 @@
 import React from 'react';
-import JSXCompiler from '../JSXCompiler';
+import JSXCompiler from './JSXCompiler';
 
 const JSXRules = () => {
   return (

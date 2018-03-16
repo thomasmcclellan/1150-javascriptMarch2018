@@ -2,7 +2,7 @@ import React from 'react';
 import Home from './Home';
 import Resources from './Resources';
 import FunctionalComponentDemo from '../concepts/FunctionalComponentDemo';
-import JSXRules from '../concepts/JSXRules';
+import JSXRules from '../concepts/JSX/JSXRules';
 
 export const routes = [
   {
