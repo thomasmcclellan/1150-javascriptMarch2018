@@ -3,6 +3,7 @@ import Home from './Home';
 import Resources from './Resources';
 import FunctionalComponentDemo from '../concepts/FunctionalComponentDemo';
 import JSXRules from '../concepts/JSX/JSXRules';
+import ClassComponentDemo from '../ClassComponentDemo';
 
 export const routes = [
   {
@@ -19,6 +20,11 @@ export const routes = [
     path: '/jsxrules',
     exact: true,
     main: () => <JSXRules/>
+  },
+  {
+    path: '/classcomponent',
+    exact: true,
+    main: () => <ClassComponentDemo/>
   },
   {
     path: '/resources',
