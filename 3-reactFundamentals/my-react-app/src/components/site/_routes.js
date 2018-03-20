@@ -5,6 +5,7 @@ import FunctionalComponentDemo from '../concepts/FunctionalComponentDemo';
 import JSXRules from '../concepts/JSX/JSXRules';
 import ClassComponentDemo from '../concepts/ClassComponentDemo';
 import PropsDemo from '../concepts/PropsDemo';
+import TimePiecesApp from '../apps/timer-apps/TimePiecesApp';
 
 export const routes = [
   {
@@ -31,6 +32,11 @@ export const routes = [
     path: '/propsdemo',
     exact: true,
     main: () => <PropsDemo/>
+  },
+  {
+    path: '/timer',
+    exact: true,
+    main: () => <TimePiecesApp/>
   },
   {
     path: '/resources',
