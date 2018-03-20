@@ -11,6 +11,11 @@ class JSXCompiler extends React.Component {
             err: ''
         }
     }
+
+    componentWillMount() {
+      console.log('Component will mount');
+    }
+
     update(e) {
         let code = e.target.value;
         try {
@@ -25,6 +30,7 @@ class JSXCompiler extends React.Component {
             this.setState({ err: err.message })
         }
     }
+    
     render() {
         return (
             <div>
