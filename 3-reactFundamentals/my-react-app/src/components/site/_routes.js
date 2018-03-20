@@ -27,11 +27,11 @@ export const routes = [
     exact: true,
     main: () => <ClassComponentDemo/>
   },
-  // {
-  //   path: '/propsdemo',
-  //   exact: true,
-  //   main: () => <PropsDemo/>
-  // },
+  {
+    path: '/propsdemo',
+    exact: true,
+    main: () => <PropsDemo/>
+  },
   {
     path: '/resources',
     exact: true,
