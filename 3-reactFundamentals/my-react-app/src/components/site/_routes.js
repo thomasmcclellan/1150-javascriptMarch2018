@@ -7,7 +7,8 @@ import ClassComponentDemo from '../concepts/ClassComponentDemo';
 import PropsDemo from '../concepts/PropsDemo';
 import TimePiecesApp from '../apps/timer-apps/TimePiecesApp';
 import ReactConceptsApp from '../apps/concept-list-app/ReactConceptsApp';
-import FriendListApp from '../apps/friends-list/FriendListApp';
+import NytApp from '../apps/nyt-app/NytApp';
+import FriendListApp from '../apps/friends-list-app/FriendListApp';
 
 export const routes = [
   {
@@ -44,6 +45,11 @@ export const routes = [
     path: '/reactconceptlist',
     exact: true,
     main: () => <ReactConceptsApp/>
+  },
+  {
+    path: '/nytapp',
+    exact: true,
+    main: () => <NytApp/>
   },
   {
     path: '/friendlist',
