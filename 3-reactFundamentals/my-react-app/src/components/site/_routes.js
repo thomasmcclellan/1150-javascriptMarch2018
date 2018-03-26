@@ -9,6 +9,7 @@ import TimePiecesApp from '../apps/timer-apps/TimePiecesApp';
 import ReactConceptsApp from '../apps/concept-list-app/ReactConceptsApp';
 import NytApp from '../apps/nyt-app/NytApp';
 import FriendListApp from '../apps/friends-list-app/FriendListApp';
+import MovieSearchApp from '../apps/movie-search-app/MovieApp';
 
 export const routes = [
   {
@@ -55,6 +56,11 @@ export const routes = [
     path: '/friendlist',
     exact: true,
     main: () => <FriendListApp/>
+  },
+  {
+    path: '/movie',
+    exact: true,
+    main: () => <MovieSearchApp/>
   },
   {
     path: '/resources',

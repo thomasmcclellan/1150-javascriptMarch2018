@@ -19,6 +19,7 @@ const Sidebar = () => (
         <li><Link to='/reactconceptlist'>React Concepts Checklist</Link></li>
         <li><Link to='/nytapp'>NYT App</Link></li>
         <li><Link to='/friendlist'>Friends List</Link></li>
+        <li><Link to='/movie'>Movie Search App</Link></li>
         <li><Link to='/resources'>Resources</Link></li>
       </ul>
     </div>
