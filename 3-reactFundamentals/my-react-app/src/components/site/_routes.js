@@ -12,6 +12,8 @@ import NytApp from '../apps/nyt-app/NytApp';
 import FriendListApp from '../apps/friends-list-app/FriendListApp';
 import MovieSearchApp from '../apps/movie-search-app/MovieApp';
 import YouTubeApiApp from '../apps/youtube-api-app/Video';
+import GithubCardApp from '../apps/github-api-app/GithubApp';
+import GithubCardAppWithSearch from '../apps/github-api-app/GithubCarAppWithSearch';
 
 export const routes = [
   {
@@ -73,6 +75,15 @@ export const routes = [
     path: '/youtube',
     exact: true,
     main: () => <YouTubeApiApp/>
+  },
+  {
+    path: '/github',
+    exact: true,
+    main: () => <div>
+                  <GithubCardApp/>
+                  <br/>
+                  <GithubCardAppWithSearch/>
+                </div>
   },
   {
     path: '/resources',
