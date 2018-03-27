@@ -5,11 +5,13 @@ import FunctionalComponentDemo from '../concepts/FunctionalComponentDemo';
 import JSXRules from '../concepts/JSX/JSXRules';
 import ClassComponentDemo from '../concepts/ClassComponentDemo';
 import PropsDemo from '../concepts/PropsDemo';
+import LifeCycleCodepen from '../concepts/LifeCycleCodepen';
 import TimePiecesApp from '../apps/timer-apps/TimePiecesApp';
 import ReactConceptsApp from '../apps/concept-list-app/ReactConceptsApp';
 import NytApp from '../apps/nyt-app/NytApp';
 import FriendListApp from '../apps/friends-list-app/FriendListApp';
 import MovieSearchApp from '../apps/movie-search-app/MovieApp';
+import YouTubeApiApp from '../apps/youtube-api-app/Video';
 
 export const routes = [
   {
@@ -38,6 +40,11 @@ export const routes = [
     main: () => <PropsDemo/>
   },
   {
+    path: '/lifecyclediagram',
+    exact: true,
+    main: () => <LifeCycleCodepen/>
+  },
+  {
     path: '/timer',
     exact: true,
     main: () => <TimePiecesApp/>
@@ -61,6 +68,11 @@ export const routes = [
     path: '/movie',
     exact: true,
     main: () => <MovieSearchApp/>
+  },
+  {
+    path: '/youtube',
+    exact: true,
+    main: () => <YouTubeApiApp/>
   },
   {
     path: '/resources',

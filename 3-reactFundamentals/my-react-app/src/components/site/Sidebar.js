@@ -15,11 +15,13 @@ const Sidebar = () => (
         <li><Link to='/jsxrules'>JSX Rules</Link></li>
         <li><Link to='/classcomponent'>Class Component</Link></li>
         <li><Link to='/propsdemo'>Props Demo</Link></li>
+        <li><Link to='/lifecyclediagram'>Life Cycle Diagram</Link></li>
         <li><Link to='/timer'>Timers</Link></li>
         <li><Link to='/reactconceptlist'>React Concepts Checklist</Link></li>
-        <li><Link to='/nytapp'>NYT App</Link></li>
-        <li><Link to='/friendlist'>Friends List</Link></li>
+        <li><Link to='/nytapp'>NYT API App</Link></li>
+        <li><Link to='/friendlist'>Friends List API App</Link></li>
         <li><Link to='/movie'>Movie Search App</Link></li>
+        <li><Link to='/youtube'>YouTube API App</Link></li>
         <li><Link to='/resources'>Resources</Link></li>
       </ul>
     </div>
