@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 export default class Stopwatch extends Component {
   constructor(props) {
     super(props);
-    [ 'lap', 'update', 'reset', 'toggle' ].forEach((method) => {
+    ['lap', 'update', 'reset', 'toggle'].forEach((method) => {
       this[method] = this[method].bind(this);
+      // console.log(this[method])
     });
 
     this.state = this.initialState = {
