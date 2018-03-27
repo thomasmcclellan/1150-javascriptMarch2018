@@ -14,6 +14,7 @@ import MovieSearchApp from '../apps/movie-search-app/MovieApp';
 import YouTubeApiApp from '../apps/youtube-api-app/Video';
 import GithubCardApp from '../apps/github-api-app/GithubApp';
 import GithubCardAppWithSearch from '../apps/github-api-app/GithubCarAppWithSearch';
+import BitcoinApp from '../apps/bitcoin-app/Bitcoin';
 
 export const routes = [
   {
@@ -84,6 +85,11 @@ export const routes = [
                   <br/>
                   <GithubCardAppWithSearch/>
                 </div>
+  },
+  {
+    path: '/bitcoin',
+    exact: true,
+    main: () => <BitcoinApp/>
   },
   {
     path: '/resources',

@@ -23,6 +23,7 @@ const Sidebar = () => (
         <li><Link to='/movie'>Movie Search App</Link></li>
         <li><Link to='/youtube'>YouTube API App</Link></li>
         <li><Link to='/github'>GitHub API App</Link></li>
+        <li><Link to='/bitcoin'>Bitcoin API App</Link></li>
         <li><Link to='/resources'>Resources</Link></li>
       </ul>
     </div>
