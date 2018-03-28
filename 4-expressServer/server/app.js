@@ -17,6 +17,8 @@ app.use(bodyParser.json());
 //   res.send('This is data from the /api/test endpoint.  It is from the server.');
 // });
 
+app.use(require('./middleware/headers'));
+
 app.use('/test', test);
 
 app.use('/api/user', user);
