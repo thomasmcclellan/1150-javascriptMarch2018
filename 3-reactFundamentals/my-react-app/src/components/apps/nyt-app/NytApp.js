@@ -1,8 +1,24 @@
 import React, { Component } from 'react';
 import NytResults from './NytResults';
+import styled from 'styled-components';
 
 const baseURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
 const key = 'b2e02612e179494c9f1f57577b582a0a';
+
+const SubmitButton = styled.button `
+  border-radius: 3px;
+  padding: 5px; 
+  background-color: teal;
+  color: white;
+  border: 1px solid teal;
+`;
+
+const FormInput = styled.input `
+  padding: 5px;
+  color: teal;
+  border-radius: 3px;
+  background-color: lightgrey;
+`;
 
 export default class NytApp extends Component {
   constructor(props) {
@@ -62,15 +78,15 @@ export default class NytApp extends Component {
         <div className='mainDiv'>
           <form onSubmit={ e => this.handleSubmit(e) }>
             <span>Enter a SINGLE search term (required): </span>
-            <input type='text' name='search' onChange={ this.handleChange } required/>
+            <FormInput type='text' name='search' onChange={ this.handleChange } required/>
             <br/>
             <span>Enter a Start Date: </span>
-            <input type='date' name='startDate' patter='[0-9]{ 8 }' onChange={ this.handleChange }/>
+            <FormInput type='date' name='startDate' patter='[0-9]{ 8 }' onChange={ this.handleChange }/>
             <br/>
             <span>Enter an End Date: </span>
-            <input type='date' name='endDate' pattern='[0-9]{ 8 }' onChange={ this.handleChange }/>
+            <FormInput type='date' name='endDate' pattern='[0-9]{ 8 }' onChange={ this.handleChange }/>
             <br/>
-            <button className='submit'>Submit Search</button>
+            <SubmitButton className='submit'>Submit Search</SubmitButton>
           </form>
           { 
             this.state.results.length > 0 ? <NytResults results={ this.state.results } changePage={ this.changePageNumber }/> : <div></div> 

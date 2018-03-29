@@ -3,6 +3,8 @@ require('dotenv').config();
 var express = require('express');
 var app = express();
 var test = require('./controllers/testcontroller');
+var authTest = require('./controllers/authtestcontroller');
+
 var user = require('./controllers/usercontroller');
 var sequelize = require('./db');
 var bodyParser = require('body-parser');
@@ -10,18 +12,23 @@ var bodyParser = require('body-parser');
 sequelize.sync();
 // sequelize.sync({ force: true });
 
-
 app.use(bodyParser.json());
-
-// app.use('/api/test', (req, res) => {
-//   res.send('This is data from the /api/test endpoint.  It is from the server.');
-// });
 
 app.use(require('./middleware/headers'));
 
-app.use('/test', test);
+/***************************************
+ * Exposed Routes
+***************************************/
 
+app.use('/test', test);
 app.use('/api/user', user);
+
+/***************************************
+ * Protected Routes
+***************************************/
+
+app.use(require('./middleware/validate-session'));
+app.use('/authtest', authTest);
 
 app.listen(3000, () => {
   console.log('App is listening on 3000');
