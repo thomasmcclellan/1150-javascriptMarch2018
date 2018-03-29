@@ -85,7 +85,7 @@ function fetchFromOneDisplayData() {
   fetch(`${ url }/one`, {
     method: 'GET',
     headers: new Headers({
-      'Content-Tpye': 'application/json'
+      'Content-Type': 'application/json'
     })
   })
     .then(
@@ -98,4 +98,17 @@ function fetchFromOneDisplayData() {
         console.log('Error:', error)
       }
     )
-}
+    .then(
+      function(response) {
+        let myList = document.querySelector('ul');
+        console.log('Response:', response)
+
+        for (r of response) {
+          console.log('Response:', r.testdata);
+          var listItem = document.createElement('li');
+          listItem.innerHTML = r.testdata;
+          myList.appendChild(listItem);
+        }
+      }
+    );
+};
