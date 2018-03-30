@@ -5,7 +5,7 @@ module.exports = {
     return queryInterface.bulkInsert('tests', [{
       testdata: 'testing. testing. testing',
       firstName: 'DeepBlue',
-      createAt: new Date(),
+      createdAt: new Date(),
       updatedAt: new Date()
     }], {});
   },
