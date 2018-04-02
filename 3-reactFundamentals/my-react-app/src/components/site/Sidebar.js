@@ -24,6 +24,7 @@ const Sidebar = () => (
         <li><Link to='/youtube'>YouTube API App</Link></li>
         <li><Link to='/github'>GitHub API App</Link></li>
         <li><Link to='/bitcoin'>Bitcoin API App</Link></li>
+        <li><Link to='/bitcoin2'>Bitcoin2</Link></li>
         <li><Link to='/resources'>Resources</Link></li>
       </ul>
     </div>

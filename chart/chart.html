@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chart</title>
+  </head>
+  <body>
+    <h1>Chart</h1>
+    <canvas id="myChart"></canvas>
+    <script src="./node_modules/chart.js/dist/Chart.js"></script>
+    <script src="./node_modules/moment/src/lib/moment/format.js"></script>
+    <script>
+      const url = 'https://api.coindesk.com/v1/bpi/historical/close.json';
+      fetch(url)
+        .then(response => response.json())
+        .then(bcData => {
+          let sortedData = [];
+          let count = 0;
+          for (bcDate in bcData.bpi) {
+            console.log(bcDate);
+            sortedData.push({
+              data: moment(bcDate).format('MM DD')
+            })
+            console.log(sortedData)
+          }
+          // console.log(bcData.bpi)
+        })
+
+      var ctx = document.getElementById("myChart").getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''],
+          datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3,12, 19, 3, 5, 2, 3,12, 19, 3, 5, 2, 3,12, 19, 3, 5, 2, 3,12, 19, 3, 5, 2, 3],
+            backgroundColor:
+              'rgba(217, 81, 78, 0.2)',
+            borderColor:
+              'rgba(217, 81, 78)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero:true
+              }
+            }]
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
