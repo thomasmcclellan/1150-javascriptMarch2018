@@ -15,7 +15,6 @@ import YouTubeApiApp from '../apps/youtube-api-app/Video';
 import GithubCardApp from '../apps/github-api-app/GithubApp';
 import GithubCardAppWithSearch from '../apps/github-api-app/GithubCarAppWithSearch';
 import BitcoinApp from '../apps/bitcoin-app/Bitcoin';
-import Bitcoin2 from '../apps/bitcoin2/Bitcoin';
 
 export const routes = [
   {
@@ -91,11 +90,6 @@ export const routes = [
     path: '/bitcoin',
     exact: true,
     main: () => <BitcoinApp/>
-  },
-  {
-    path: '/bitcoin2',
-    exact: true,
-    main: () => <Bitcoin2/>
   },
   {
     path: '/resources',

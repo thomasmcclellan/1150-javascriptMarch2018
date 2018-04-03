@@ -1,67 +1,69 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+import styled from 'styled-components';
 
-class InfoBox extends Component {
+const InfoCard = styled.div `
+  display: inline-block;
+  width: 50%;
+  margin-bottom: 1em;
+  text-align: center;
+  color: #d9514e;
+`
+
+export default class InfoBox extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      currentPrice: null,
-      monthChangeD: null,
-      monthChangeP: null,
-      updatedAt: null
+    this.state ={
+      dates: [],
+      data: [],
+      infoCurrent: [],
+      infoPayout: []
     }
   }
-  componentDidMount(){
-    this.getData = () => {
-      const {data} = this.props;
-      const url = 'https://api.coindesk.com/v1/bpi/currentprice.json';
 
-      fetch(url).then(r => r.json())
-        .then((bitcoinData) => {
-          const price = bitcoinData.bpi.USD.rate_float;
-          const change = price - data[0].y;
-          const changeP = (price - data[0].y) / data[0].y * 100;
-
-          this.setState({
-            currentPrice: bitcoinData.bpi.USD.rate_float,
-            monthChangeD: change.toLocaleString('us-EN',{ style: 'currency', currency: 'USD' }),
-            monthChangeP: changeP.toFixed(2) + '%',
-            updatedAt: bitcoinData.time.updated
-          })
-        })
-        .catch((e) => {
-          console.log(e);
-        });
+  componentWillMount() {
+    const infoData = this.props.data;
+    let dates = [];
+    let data = [];
+    for (let thing in infoData) {
+      let bitcoinDates = moment(thing).format('MMM DD');
+      dates.push(bitcoinDates)
+      data.push(infoData[thing])
     }
-    this.getData();
-    this.refresh = setInterval(() => this.getData(), 90000);
+    this.setState({
+      dates: dates,
+      data: data,
+      infoCurrent: data[30].toLocaleString('us-EN', {
+        style: 'currency',
+        currency: 'USD'
+      }),
+      infoPayout: (data[30] - data[0]).toLocaleString('us-EN', {
+        style: 'currency',
+        currency: 'USD'
+      })
+    })
   }
-  componentWillUnmount(){
-    clearInterval(this.refresh);
-  }
-  render(){
+  
+  render() {
     return (
-      <div id="data-container">
-        { this.state.currentPrice ?
-          <div id="left" className='box'>
-            <div className="heading">{this.state.currentPrice.toLocaleString('us-EN',{ style: 'currency', currency: 'USD' })}</div>
-            <div className="subtext">{'Updated ' + moment(this.state.updatedAt ).fromNow()}</div>
+      <div>
+        <InfoCard>
+          <div>
+            <h3>Current Price:</h3>
           </div>
-        : null}
-        { this.state.currentPrice ?
-          <div id="middle" className='box'>
-            <div className="heading">{this.state.monthChangeD}</div>
-            <div className="subtext">Change Since Last Month (USD)</div>
+          <div>
+            <h5>{this.state.infoCurrent}</h5>
           </div>
-        : null}
-          <div id="right" className='box'>
-            <div className="heading">{this.state.monthChangeP}</div>
-            <div className="subtext">Change Since Last Month (%)</div>
+        </InfoCard>
+        <InfoCard>
+          <div>
+            <h3>Change Since Last Month (USD):</h3>
           </div>
-
+          <div>
+            <h5>{ this.state.infoPayout }</h5>
+          </div>
+        </InfoCard>
       </div>
     );
   }
-}
-
-export default InfoBox;
+};
