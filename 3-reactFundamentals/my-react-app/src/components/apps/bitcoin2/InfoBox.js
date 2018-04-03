@@ -1,65 +1,67 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+import styled from 'styled-components';
+
+const InfoCard = styled.div `
+  display: inline-block;
+  width: 50%;
+  margin-bottom: 1em;
+  text-align: center;
+`
 
 export default class InfoBox extends Component {
-  constructor() {
-    super();
-    this.state = {
-      currentPrice: null,
-      monthChangeDate: null,
-      monthChangePayout: null,
-      updatedAt: null
+  constructor(props) {
+    super(props);
+    this.state ={
+      dates: [],
+      data: [],
+      infoCurrent: [],
+      infoPayout: []
     }
   }
-  componentDidMount() {
-    this.getData = () => {
-      const { data } = this.props;
-      const url = 'https://api.coindesk.com/v1/bpi/currentprice.json';
 
-      fetch(url)
-        .then(response => response.json())
-        .then(bitcoinData => {
-          let price = bitcoinData.bpi.USD.rate_flaot;
-          console.log(bitcoinData.bpi.USD.rate_flaot)
-        })
+  componentWillMount() {
+    const infoData = this.props.data;
+    let dates = [];
+    let data = [];
+    for (let thing in infoData) {
+      let bitcoinDates = moment(thing).format('MMM DD');
+      dates.push(bitcoinDates)
+      data.push(infoData[thing])
     }
-    this.getData();
+    this.setState({
+      dates: dates,
+      data: data,
+      infoCurrent: data[30].toLocaleString('us-EN', {
+        style: 'currency',
+        currency: 'USD'
+      }),
+      infoPayout: (data[30] - data[0]).toLocaleString('us-EN', {
+        style: 'currency',
+        currency: 'USD'
+      })
+    })
   }
-
+  
   render() {
     return (
-      <div id='data-container'>
-        { this.state.currentPrice ? 
-          <div className='box' id='left'>
-            <div className='heading'>
-              { this.state.currentPrice.toLocaleString('us-EN', { 
-                style: 'currency',
-                currency: 'USD'
-              })}
-            </div>
-            <div className='subtext'>
-              { `Updated ${ moment(this.state.updatedAt).fromNow() }` }
-            </div>
+      <div>
+        <InfoCard>
+          <div>
+            Current Price:
           </div>
-        : null }
-        { this.state.currentPrice ? 
-          <div className='box' id='middle'>
-            <div className='heading'>
-              { this.state.monthChangeDate }
-            </div>
-            <div className='subtext'>
-              Change Since Last Month (USD)
-            </div>
+          <div>
+            {this.state.infoCurrent}
           </div>
-        : null }
-        <div className='box' id='right'>
-          <div className='heading'>
-            { this.state.monthChangePayout }
+        </InfoCard>
+        <InfoCard>
+          <div>
+            Change Since Last Month (USD):
           </div>
-          <div className='subtext'>
-            Change Since Last Month (%)
+          <div>
+            { this.state.infoPayout }
           </div>
-        </div>
+        </InfoCard>
       </div>
     );
   }
