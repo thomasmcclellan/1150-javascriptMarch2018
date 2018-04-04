@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import InfoBox from './InfoBox';
 import LineChart from './LineChart';
+import InfoBox from './InfoBox';
 
 export default class Bitcoin extends Component {
   constructor() {
@@ -16,7 +16,7 @@ export default class Bitcoin extends Component {
     fetch(url)
       .then(response => response.json())
       .then(bitcoinData => {
-        // console.log(bitcoinData.bpi);
+        console.log(bitcoinData.bpi);
         this.setState({
           data: bitcoinData.bpi,
           fetchingData: false
@@ -33,7 +33,7 @@ export default class Bitcoin extends Component {
         <div className='mainDiv'>
           <h1>30 Day Bitcoin Price Chart</h1>
           { !this.state.fetchingData ? <InfoBox data={ this.state.data }/> : null }
-          { !this.state.fetchingData ? <LineChart data={ this.state.data } /> : null }
+          { !this.state.fetchingData ? <LineChart data={ this.state.data }/> : null }
         </div>
       </div>
     );

@@ -7,22 +7,22 @@ export default class LineChart extends Component {
     super(props);
     this.state ={
       dates: [],
-      data: []
+      payout: []
     }
   }
 
   componentWillMount() {
     const unsortedData = this.props.data;
     let dates = [];
-    let data = [];
-    for (let thing in unsortedData) {
-      let bitcoinDates = moment(thing).format('MMM DD');
+    let payout = [];
+    for (let item in unsortedData) {
+      let bitcoinDates = moment(item).format('MMM DD');
       dates.push(bitcoinDates)
-      data.push(unsortedData[thing])
+      payout.push(unsortedData[item])
     }
     this.setState({
       dates: dates,
-      data: data
+      payout: payout
     })
   }
 
@@ -33,13 +33,12 @@ export default class LineChart extends Component {
       data: {
         labels: this.state.dates,
         datasets: [{
-          data: this.state.data,
-          backgroundColor: '#d9514e80', // 50% opacity => rgba(217, 81, 78, 0.5)
+          data: this.state.payout,
+          backgroundColor: '#d9514e80', 
           borderColor: '#d9514e',
           borderWidth: 2
         }]
       },
-      // Legend off
       options: {
         legend: {
           display: false
@@ -56,8 +55,8 @@ export default class LineChart extends Component {
   }
 
   render() {
-    return(
+    return (
       <canvas id='myChart'></canvas>
-    )
+    );
   }
 };

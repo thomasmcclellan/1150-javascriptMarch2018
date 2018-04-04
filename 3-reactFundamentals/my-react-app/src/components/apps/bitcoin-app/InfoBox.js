@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import moment from 'moment';
 import styled from 'styled-components';
 
 const InfoCard = styled.div `
@@ -14,8 +13,7 @@ export default class InfoBox extends Component {
   constructor(props) {
     super(props);
     this.state ={
-      dates: [],
-      data: [],
+      payout: [],
       infoCurrent: [],
       infoPayout: []
     }
@@ -23,27 +21,17 @@ export default class InfoBox extends Component {
 
   componentWillMount() {
     const infoData = this.props.data;
-    let dates = [];
-    let data = [];
+    let payout = [];
     for (let thing in infoData) {
-      let bitcoinDates = moment(thing).format('MMM DD');
-      dates.push(bitcoinDates)
-      data.push(infoData[thing])
+      payout.push(infoData[thing])
     }
     this.setState({
-      dates: dates,
-      data: data,
-      infoCurrent: data[30].toLocaleString('us-EN', {
-        style: 'currency',
-        currency: 'USD'
-      }),
-      infoPayout: (data[30] - data[0]).toLocaleString('us-EN', {
-        style: 'currency',
-        currency: 'USD'
-      })
+      payout: payout,
+      infoCurrent: payout[30].toLocaleString('us-EN', { style: 'currency', currency: 'USD' }),
+      infoPayout: (payout[30] - payout[0]).toLocaleString('us-EN', { style: 'currency', currency: 'USD' })
     })
   }
-  
+
   render() {
     return (
       <div>
