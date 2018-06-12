@@ -31,7 +31,12 @@ function fetchResults(e) {
 
   if (startDate.value !== '') {
     console.log(startDate.value)
-    url += '&begin_date=' + endDate.value;
+    url += '&begin_date=' + startDate.value;
+  }
+  
+  if (endDate.value !== '') {
+    console.log(endDate.value)
+    url += '&end_date=' + endDate.value;
   }
 
   fetch(url)
@@ -118,6 +123,7 @@ function previousPage(e) {
   // console.log('Previous button clicked');
   if (pageNumber > 0) {
     pageNumber--;
+    fetchResults(e);
   } else {
     return;
   }
